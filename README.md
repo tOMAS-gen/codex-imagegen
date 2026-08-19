@@ -1,6 +1,12 @@
 # codex-imagegen
 
+[![skills.sh](https://www.skills.sh/b/tOMAS-gen/codex-imagegen)](https://www.skills.sh/tOMAS-gen/codex-imagegen)
+
 A Claude Code skill that teaches Claude to generate and edit AI images — by delegating to Codex.
+
+```bash
+npx skills add tOMAS-gen/codex-imagegen --skill codex-imagegen
+```
 
 Claude Code has no image generation of its own. Codex does: a built-in `image_gen` tool, wrapped
 in its own `imagegen` system skill. OpenAI's [`codex-plugin-cc`][plugin] already provides a pipe
@@ -38,8 +44,17 @@ Two details make the chain work:
 
 ## Install
 
-Clone it, then link it into your skills directory. Linking rather than copying means editing the
-clone edits the installed skill.
+```bash
+npx skills add tOMAS-gen/codex-imagegen --skill codex-imagegen
+```
+
+Add `-g` to install for your user instead of the current project. This installs into
+`.agents/skills/` and symlinks it where Claude Code looks, so no restart is needed.
+
+<details>
+<summary>Manual install, for working on the skill itself</summary>
+
+Link rather than copy, so editing the clone edits the installed skill.
 
 ```powershell
 # Windows — a junction needs no elevation
@@ -53,6 +68,8 @@ New-Item -ItemType Junction -Path "$env:USERPROFILE\.claude\skills\codex-imagege
 git clone https://github.com/tOMAS-gen/codex-imagegen.git
 ln -s "$PWD/codex-imagegen" ~/.claude/skills/codex-imagegen
 ```
+
+</details>
 
 This is a plain skill, not a plugin: a folder with a `SKILL.md`, no manifest, nothing registered
 with `claude plugin`. Claude Code picks it up from the skills directory on its own. Then check
