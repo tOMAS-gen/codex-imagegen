@@ -156,3 +156,7 @@ evals/                        behaviour cases
 - Python with Pillow — only for `make_mask.py`. On Windows use `py -3`; bare `python` is usually
   the Microsoft Store alias stub.
 - `OPENAI_API_KEY` — only for the CLI route (masks and explicit execution controls)
+
+## License
+
+MIT — see [LICENSE](LICENSE).
